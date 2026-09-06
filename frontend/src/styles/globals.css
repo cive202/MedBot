@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  /* Light medical theme — mirrors the Specialist Finder palette. */
+  --bg: 238 242 247;          /* #eef2f7 base canvas */
+  --surface: 255 255 255;     /* card / panel surface */
+  --border: 207 215 227;      /* #cfd7e3 hairlines */
+  --text: 20 33 61;           /* #14213d deep navy */
+  --muted: 102 112 133;       /* #667085 secondary */
+  --primary: 15 118 110;      /* #0f766e teal CTA */
+  --accent: 237 137 54;       /* #ed8936 warm orange */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-text font-sans antialiased;
+  background-color: rgb(var(--bg));
+  /* Specialist Finder backdrop: dual diagonal washes over the canvas. */
+  background-image:
+    linear-gradient(135deg, rgba(0, 128, 128, 0.14), transparent 38%),
+    linear-gradient(225deg, rgba(237, 137, 54, 0.12), transparent 42%);
+  background-attachment: fixed;
+}
+
+/* Display serif — used by the public landing page headings only. */
+.font-display {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+/* The landing page paints its own warm canvas over the app's cool gradient. */
+.landing {
+  scroll-behavior: smooth;
+}
+
+.glass {
+  @apply border border-border/70 rounded-2xl;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 48px rgba(20, 33, 61, 0.09);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition;
+}
+.btn-primary {
+  @apply btn text-white;
+  background: rgb(var(--primary));
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+.btn-ghost {
+  @apply btn border border-border/80;
+  background: rgba(255, 255, 255, 0.9);
+  color: rgb(var(--text));
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+input, textarea, select {
+  @apply border border-border/80 rounded-xl px-3 py-2 outline-none;
+  background: rgba(255, 255, 255, 0.92);
+  color: rgb(var(--text));
+}
+input:focus, textarea:focus, select:focus {
+  border-color: rgb(var(--primary));
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.18);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgb(var(--muted) / 0.85);
+}

@@ -1,0 +1,33 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.0
+sqlalchemy[asyncio]==2.0.36
+aiosqlite==0.20.0
+alembic==1.14.0
+fastapi-users[sqlalchemy,oauth]==14.0.1
+httpx-oauth==0.16.1
+python-multipart==0.0.20
+pypdf==5.1.0
+pillow==11.0.0
+python-magic-bin==0.4.14; sys_platform == "win32"
+python-magic==0.4.27; sys_platform != "win32"
+httpx==0.28.1
+cryptography==44.0.0
+slowapi==0.1.9
+email-validator==2.2.0
+# Vector DB (LangChain + Chroma). Ranges so pip resolves a numpy-2-compatible
+# set on Python 3.13. Older langchain-chroma (<0.2.3) pinned numpy<2 which has
+# no wheel for 3.13, so we require >=0.2.3.
+langchain>=0.3.14,<0.4
+langchain-community>=0.3.14,<0.4
+langchain-chroma>=0.2.3,<0.4
+langchain-huggingface>=0.1.2,<0.3
+chromadb>=0.5.23,<2
+sentence-transformers>=3.3.1,<4
+# ML stack — numpy left unpinned so pip picks 2.x on 3.13.
+scikit-learn>=1.6.0,<2
+joblib>=1.4.2,<2
+pandas>=2.2.3,<3
+openpyxl>=3.1.5,<4
+rapidfuzz>=3.10.1,<4

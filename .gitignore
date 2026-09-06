@@ -1,0 +1,44 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Secrets ---
+# .env holds the Fernet key and JWT secret. Only the template is versioned.
+.env
+.env.*
+!.env.example
+
+# --- Generated at runtime ---
+# backend/datasets/ holds shipped source data and IS versioned.
+# backend/data/ is everything the app builds for itself.
+backend/data/
+backend/uploads/*
+!backend/uploads/.gitkeep
+*.joblib
+*.log
+
+# --- Node / Vite ---
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+
+# --- Generated documentation ---
+# The module documentation PDF is derived from the source; the README is the
+# versioned reference.
+*.pdf
+*.docx
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
