@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MedAssist — Offline Answers</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f7f5; --surface: #ffffff; --text: #1a1a1a; --muted: #6b6b6b;
+    --border: #e3e3df; --accent: #2f6f6b; --warn-bg: #fff8e6; --warn-br: #e8c56a;
+    --warn-tx: #6b4e00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181a; --surface: #1e2124; --text: #ececec; --muted: #9aa0a6;
+      --border: #2e3235; --accent: #6fbcb6; --warn-bg: #2a2416; --warn-br: #6b5a2a;
+      --warn-tx: #e8c56a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 1rem 4rem;
+    background: var(--bg); color: var(--text);
+    font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; }
+  header { padding: 2.5rem 0 1.25rem; }
+  h1 { margin: 0 0 .35rem; font-size: 1.6rem; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0; }
+  .notice {
+    margin: 1.25rem 0; padding: .85rem 1rem; border-radius: .6rem;
+    background: var(--warn-bg); border: 1px solid var(--warn-br); color: var(--warn-tx);
+    font-size: .875rem;
+  }
+  .notice strong { display: block; margin-bottom: .2rem; }
+  details {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: .6rem; margin-bottom: .6rem; overflow: hidden;
+  }
+  summary {
+    cursor: pointer; padding: .85rem 1rem; font-weight: 500;
+    display: flex; align-items: center; gap: .6rem; list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: "+"; color: var(--accent); font-weight: 700; flex: none; width: .9rem;
+  }
+  details[open] summary::before { content: "–"; }
+  details[open] summary { border-bottom: 1px solid var(--border); }
+  .sev {
+    margin-left: auto; flex: none; font-size: .7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .04em;
+    padding: .15rem .5rem; border-radius: 999px; border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .sev-moderate { color: #a86a00; border-color: #d9a441; }
+  .sev-critical { color: #b3261e; border-color: #e08c86; }
+  .answer { padding: 1rem; white-space: pre-wrap; }
+  .answer ul { margin: .4rem 0; padding-left: 1.2rem; white-space: normal; }
+  .answer li { margin: .25rem 0; }
+  .answer hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+  footer { margin-top: 2rem; color: var(--muted); font-size: .8rem; }
+  code { font-size: .95em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>MedAssist — Offline Answers</h1>
+    <p class="sub">The live assistant is not running. Here are 10 saved answers to common questions.</p>
+  </header>
+
+  <div class="notice">
+    <strong>These are saved, general answers.</strong>
+    They were produced earlier by this assistant for the questions below — not for your
+    situation. MedAssist is an educational project and is not a substitute for a
+    qualified medical professional. If symptoms are severe or getting worse, contact
+    local emergency services or a clinician now.
+  </div>
+
+  <details name="qa" id="q0"><summary>What is the difference between a common cold and the flu?<span class="sev sev-low">Routine</span></summary><div class="answer">Hi there! I understand you&#x27;re curious about the difference between a common cold and the flu. It&#x27;s a common question, and it&#x27;s good to know the distinctions.
+
+Basically, both are respiratory illnesses, but the flu tends to be more intense and have more severe symptoms than a cold. The flu often comes on suddenly, while a cold usually develops more gradually.
+
+The flu can cause a high fever, body aches, and fatigue, while a cold is usually milder and focuses more on nasal symptoms like a runny nose and sore throat.
+
+To help me understand better, have you had a fever recently?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q1"><summary>I have had a sore throat for two days. What could be causing it?<span class="sev sev-low">Routine</span></summary><div class="answer">Okay, I understand you&#x27;ve had a sore throat for two days.
+
+Based on what you&#x27;ve told me, it could be a few things. A common cold, the flu, or even just a simple irritation. Sometimes a sore throat is just a symptom of something else going on.
+
+Since it&#x27;s only been two days, and you don&#x27;t mention any other concerning symptoms like a high fever or difficulty breathing, it&#x27;s probably not something too serious. You could try some over-the-counter pain relievers like ibuprofen or acetaminophen to help with the discomfort. Also, make sure you&#x27;re drinking plenty of fluids and getting enough rest.
+
+I&#x27;d say this is a low-severity situation. I would suggest you monitor your symptoms and see if they improve on their own. If they don&#x27;t, or if you develop a fever, difficulty breathing, or other concerning symptoms, you should see a doctor.
+
+Do you have any other symptoms besides the sore throat?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q2"><summary>When does a fever become serious enough to see a doctor?<span class="sev sev-low">Routine</span></summary><div class="answer">Okay, I understand. You&#x27;re asking when a fever becomes serious enough to see a doctor.
+
+Based on what you&#x27;ve told me, it sounds like you have a fever. A fever can be caused by many things, like a cold, the flu, or even COVID-19. Sometimes, it can also be a sign of something more serious, but usually, it&#x27;s not.
+
+If your fever is not too high, you can usually manage it at home with rest and fluids. However, if your fever is very high, doesn&#x27;t come down with medication, or is accompanied by other symptoms like a severe headache, stiff neck, difficulty breathing, or chest pain, you should see a doctor.
+
+How are you feeling overall?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q3"><summary>I have a persistent cough that will not go away. What could it be?<span class="sev sev-low">Routine</span></summary><div class="answer">I understand you&#x27;re experiencing a persistent cough. It&#x27;s good to get it checked out, but it doesn&#x27;t sound like it&#x27;s an emergency.
+
+Based on what you&#x27;ve told me, it could be a few different things. Some possibilities include a lingering cough from a cold, allergies, or even something like asthma.
+
+To help me narrow things down, could you tell me if you have any other symptoms like a fever, shortness of breath, or wheezing?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q4"><summary>What can cause a headache that lasts several days?<span class="sev sev-low">Routine</span></summary><div class="answer">I understand you&#x27;ve been experiencing a headache that&#x27;s lasted for several days. I know how frustrating that can be.
+
+Based on what you&#x27;ve told me, it sounds like you might have a tension headache or possibly a migraine. Both can cause headaches that last for several days. Sometimes, headaches can also be caused by stress, dehydration, or even just getting too much sleep.
+
+If your headache is mild and not accompanied by any other concerning symptoms, you can try some self-care measures like getting enough rest, staying hydrated, and managing your stress levels. If the headache persists or worsens, or if you develop any other symptoms like fever, stiff neck, or vision changes, it&#x27;s a good idea to see a doctor.
+
+Given that your headache is mild, I would suggest trying some self-care measures for now. If it doesn&#x27;t improve or gets worse, please see a doctor.
+
+Do you have any other symptoms besides the headache?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q5"><summary>I have stomach pain and nausea. What might be causing this?<span class="sev sev-moderate">See a clinician soon</span></summary><div class="answer">Okay, I understand you&#x27;re experiencing stomach pain and nausea. It&#x27;s definitely not fun to deal with those symptoms.
+
+Based on what you&#x27;ve described, it could be a few different things. Some possibilities include indigestion, which is often caused by eating too much or eating something that doesn&#x27;t agree with you. It&#x27;s also possible you might have a viral or bacterial stomach bug, which can cause nausea, vomiting, and stomach cramps. In some cases, the pain might be related to a more serious issue like appendicitis, but that&#x27;s less likely.
+
+Given that you&#x27;re experiencing stomach pain and nausea, it&#x27;s probably best to see a doctor to get a proper diagnosis. They can examine you and run some tests to figure out what&#x27;s going on.
+
+How are you feeling overall?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q6"><summary>What are the classic warning signs that someone needs emergency care?<span class="sev sev-low">Routine</span></summary><div class="answer">Okay, I understand. You&#x27;re asking about warning signs that would require emergency care.
+
+Some classic warning signs that would warrant emergency care include:
+
+<ul><li><strong>Difficulty breathing:</strong> This could indicate a serious respiratory problem.</li><li><strong>Chest pain or pressure:</strong> This could be a sign of a heart attack or other serious cardiac issue.</li><li><strong>New confusion:</strong> This could be a sign of a stroke or other neurological problem.</li><li><strong>Inability to wake:</strong> This could be a sign of a serious medical condition.</li><li><strong>Pale, grey, or blue lips or face:</strong> This could indicate a lack of oxygen.</li><li><strong>Severe asthma attack:</strong> If you can&#x27;t speak in full sentences, your lips are turning blue, or your reliever inhaler isn&#x27;t working, call emergency services.</li><li><strong>Very high blood glucose with confusion:</strong> This could be a sign of diabetic ketoacidosis (DKA) or hyperglycemic hyperosmolar state (HHS).</li><li><strong>Peritonitis:</strong> This is a serious infection of the abdominal cavity, often caused by a ruptured appendix.</li><li><strong>Severe dehydration:</strong> This can be dangerous, especially for young children and the elderly.</li></ul>
+
+It&#x27;s important to remember that these are just some of the warning signs, and there may be other signs that are not listed here. If you are experiencing any of these warning signs, it is important to seek medical attention immediately.
+
+Do you have any other questions about warning signs?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q7"><summary>What causes shortness of breath, and when is it urgent?<span class="sev sev-moderate">See a clinician soon</span></summary><div class="answer">Okay, I understand you&#x27;re experiencing shortness of breath. I&#x27;m sorry to hear that. It&#x27;s always a bit concerning when you&#x27;re having trouble breathing.
+
+Shortness of breath can be caused by a number of things, like problems with your lungs, heart, or even anxiety. It&#x27;s not always an emergency, but it&#x27;s good to be aware of when it might be.
+
+To help me understand what might be going on, could you tell me a little more about when you first noticed the shortness of breath?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q8"><summary>I feel dizzy and lightheaded when I stand up. Why might that happen?<span class="sev sev-low">Routine</span></summary><div class="answer">I understand you&#x27;re feeling dizzy and lightheaded when you stand up. That&#x27;s not a pleasant feeling!
+
+Based on what you&#x27;ve told me, it could be a few things. One possibility is orthostatic hypotension, which is when your blood pressure drops suddenly when you stand up. This can cause dizziness and lightheadedness. Other possibilities include dehydration, low blood sugar, or even a more serious condition like a heart problem.
+
+Given that it&#x27;s just dizziness and lightheadedness, it&#x27;s likely not something to worry about too much, but it&#x27;s still worth checking out.
+
+Would you like to see a doctor to get this checked out?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+  <details name="qa" id="q9"><summary>What can I do at home for body aches and tiredness?<span class="sev sev-low">Routine</span></summary><div class="answer">Okay, I understand you&#x27;re experiencing body aches and tiredness. It&#x27;s a common complaint, and often, these symptoms can be managed at home with some simple measures.
+
+Based on what you&#x27;ve described, some possibilities to consider include:
+
+<ul><li><strong>Common cold:</strong> This can cause body aches, fatigue, and a mild headache.</li><li><strong>Flu:</strong> Similar to a cold, but often with more intense body aches and fever.</li><li><strong>Dehydration:</strong> Sometimes, tiredness can be a sign of not drinking enough fluids.</li><li><strong>Stress or lack of sleep:</strong> These can also lead to body aches and fatigue.</li></ul>
+
+Since you&#x27;re experiencing body aches and tiredness, it&#x27;s always a good idea to rest, drink plenty of fluids, and consider over-the-counter pain relievers like ibuprofen or acetaminophen.
+
+Given the symptoms, I would suggest trying some self-care measures like rest, hydration, and over-the-counter pain relievers. If your symptoms persist or worsen, or if you develop a fever, cough, or other concerning symptoms, it&#x27;s best to consult a doctor.
+
+Do you have any other symptoms I should be aware of?
+
+
+<hr>
+<strong>Disclaimer.</strong> This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.</div></details>
+
+  <footer>
+    Captured from the MedAssist model (MedGemma 4B with retrieval over the built-in
+    disease knowledge base). Regenerate with
+    <code>python scripts/generate_fallback_answers.py</code> then
+    <code>python scripts/build_offline_page.py</code>.
+  </footer>
+</div>
+</body>
+</html>
