@@ -1,9 +1,12 @@
 import asyncio
 import logging
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.auth.routes import router as auth_router
 from app.config import get_settings
@@ -128,3 +131,42 @@ async def health() -> dict:
         "medgemma": medgemma_state,
         "rf": rf_state,
     }
+
+
+# --- Static frontend -------------------------------------------------------
+# In production the built SPA is served from the same origin as the API. That
+# is what frontend/src/lib/api.ts already assumes (baseURL "/") and it keeps the
+# httpOnly auth cookie first-party, so no CORS or SameSite=None is needed.
+# In development this directory does not exist and Vite's proxy does the same
+# job, so the whole block is skipped.
+FRONTEND_DIST = Path(__file__).resolve().parents[2] / "frontend" / "dist"
+
+# Paths that belong to the API. A typo'd endpoint must 404 as an API call
+# rather than quietly returning index.html with a 200.
+API_PREFIXES = (
+    "api/", "auth/", "users/", "health", "docs", "redoc", "openapi.json",
+)
+
+if FRONTEND_DIST.is_dir():
+    assets = FRONTEND_DIST / "assets"
+    if assets.is_dir():
+        # Mounted separately so hashed bundles get StaticFiles' caching headers.
+        app.mount("/assets", StaticFiles(directory=assets), name="assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def spa(full_path: str) -> FileResponse:
+        """Serve the SPA, falling back to index.html for client-side routes."""
+        if full_path.startswith(API_PREFIXES):
+            raise HTTPException(status_code=404, detail="Not found")
+        candidate = (FRONTEND_DIST / full_path).resolve()
+        if (
+            full_path
+            and candidate.is_file()
+            and candidate.is_relative_to(FRONTEND_DIST)
+        ):
+            return FileResponse(candidate)
+        return FileResponse(FRONTEND_DIST / "index.html")
+
+    log.info("Serving built frontend from %s", FRONTEND_DIST)
+else:
+    log.info("No frontend/dist — running API-only (Vite dev server proxies instead).")
