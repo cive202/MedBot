@@ -1,0 +1,121 @@
+[
+  {
+    "question": "What is the difference between a common cold and the flu?",
+    "answer": "Hi there! I understand you're curious about the difference between a common cold and the flu. It's a common question, and it's good to know the distinctions.\n\nBasically, both are respiratory illnesses, but the flu tends to be more intense and have more severe symptoms than a cold. The flu often comes on suddenly, while a cold usually develops more gradually.\n\nThe flu can cause a high fever, body aches, and fatigue, while a cold is usually milder and focuses more on nasal symptoms like a runny nose and sore throat.\n\nTo help me understand better, have you had a fever recently?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "COVID-19",
+      "Common cold",
+      "Influenza"
+    ]
+  },
+  {
+    "question": "I have had a sore throat for two days. What could be causing it?",
+    "answer": "Okay, I understand you've had a sore throat for two days.\n\nBased on what you've told me, it could be a few things. A common cold, the flu, or even just a simple irritation. Sometimes a sore throat is just a symptom of something else going on.\n\nSince it's only been two days, and you don't mention any other concerning symptoms like a high fever or difficulty breathing, it's probably not something too serious. You could try some over-the-counter pain relievers like ibuprofen or acetaminophen to help with the discomfort. Also, make sure you're drinking plenty of fluids and getting enough rest.\n\nI'd say this is a low-severity situation. I would suggest you monitor your symptoms and see if they improve on their own. If they don't, or if you develop a fever, difficulty breathing, or other concerning symptoms, you should see a doctor.\n\nDo you have any other symptoms besides the sore throat?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "COVID-19",
+      "Common cold",
+      "Strep throat"
+    ]
+  },
+  {
+    "question": "When does a fever become serious enough to see a doctor?",
+    "answer": "Okay, I understand. You're asking when a fever becomes serious enough to see a doctor.\n\nBased on what you've told me, it sounds like you have a fever. A fever can be caused by many things, like a cold, the flu, or even COVID-19. Sometimes, it can also be a sign of something more serious, but usually, it's not.\n\nIf your fever is not too high, you can usually manage it at home with rest and fluids. However, if your fever is very high, doesn't come down with medication, or is accompanied by other symptoms like a severe headache, stiff neck, difficulty breathing, or chest pain, you should see a doctor.\n\nHow are you feeling overall?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "COVID-19",
+      "Common cold",
+      "Gastroenteritis",
+      "Influenza",
+      "Strep throat"
+    ]
+  },
+  {
+    "question": "I have a persistent cough that will not go away. What could it be?",
+    "answer": "I understand you're experiencing a persistent cough. It's good to get it checked out, but it doesn't sound like it's an emergency.\n\nBased on what you've told me, it could be a few different things. Some possibilities include a lingering cough from a cold, allergies, or even something like asthma.\n\nTo help me narrow things down, could you tell me if you have any other symptoms like a fever, shortness of breath, or wheezing?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "Asthma",
+      "COVID-19",
+      "Common cold",
+      "Strep throat"
+    ]
+  },
+  {
+    "question": "What can cause a headache that lasts several days?",
+    "answer": "I understand you've been experiencing a headache that's lasted for several days. I know how frustrating that can be.\n\nBased on what you've told me, it sounds like you might have a tension headache or possibly a migraine. Both can cause headaches that last for several days. Sometimes, headaches can also be caused by stress, dehydration, or even just getting too much sleep.\n\nIf your headache is mild and not accompanied by any other concerning symptoms, you can try some self-care measures like getting enough rest, staying hydrated, and managing your stress levels. If the headache persists or worsens, or if you develop any other symptoms like fever, stiff neck, or vision changes, it's a good idea to see a doctor.\n\nGiven that your headache is mild, I would suggest trying some self-care measures for now. If it doesn't improve or gets worse, please see a doctor.\n\nDo you have any other symptoms besides the headache?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "Migraine",
+      "Tension headache"
+    ]
+  },
+  {
+    "question": "I have stomach pain and nausea. What might be causing this?",
+    "answer": "Okay, I understand you're experiencing stomach pain and nausea. It's definitely not fun to deal with those symptoms.\n\nBased on what you've described, it could be a few different things. Some possibilities include indigestion, which is often caused by eating too much or eating something that doesn't agree with you. It's also possible you might have a viral or bacterial stomach bug, which can cause nausea, vomiting, and stomach cramps. In some cases, the pain might be related to a more serious issue like appendicitis, but that's less likely.\n\nGiven that you're experiencing stomach pain and nausea, it's probably best to see a doctor to get a proper diagnosis. They can examine you and run some tests to figure out what's going on.\n\nHow are you feeling overall?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "moderate",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "Acute appendicitis",
+      "Gastroenteritis",
+      "Influenza",
+      "Migraine"
+    ]
+  },
+  {
+    "question": "What are the classic warning signs that someone needs emergency care?",
+    "answer": "Okay, I understand. You're asking about warning signs that would require emergency care.\n\nSome classic warning signs that would warrant emergency care include:\n\n*   **Difficulty breathing:** This could indicate a serious respiratory problem.\n*   **Chest pain or pressure:** This could be a sign of a heart attack or other serious cardiac issue.\n*   **New confusion:** This could be a sign of a stroke or other neurological problem.\n*   **Inability to wake:** This could be a sign of a serious medical condition.\n*   **Pale, grey, or blue lips or face:** This could indicate a lack of oxygen.\n*   **Severe asthma attack:** If you can't speak in full sentences, your lips are turning blue, or your reliever inhaler isn't working, call emergency services.\n*   **Very high blood glucose with confusion:** This could be a sign of diabetic ketoacidosis (DKA) or hyperglycemic hyperosmolar state (HHS).\n*   **Peritonitis:** This is a serious infection of the abdominal cavity, often caused by a ruptured appendix.\n*   **Severe dehydration:** This can be dangerous, especially for young children and the elderly.\n\nIt's important to remember that these are just some of the warning signs, and there may be other signs that are not listed here. If you are experiencing any of these warning signs, it is important to seek medical attention immediately.\n\nDo you have any other questions about warning signs?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "emergency_medicine",
+    "retrieved": [
+      "Acute appendicitis",
+      "Asthma",
+      "COVID-19",
+      "Gastroenteritis",
+      "Type 2 diabetes mellitus"
+    ]
+  },
+  {
+    "question": "What causes shortness of breath, and when is it urgent?",
+    "answer": "Okay, I understand you're experiencing shortness of breath. I'm sorry to hear that. It's always a bit concerning when you're having trouble breathing.\n\nShortness of breath can be caused by a number of things, like problems with your lungs, heart, or even anxiety. It's not always an emergency, but it's good to be aware of when it might be.\n\nTo help me understand what might be going on, could you tell me a little more about when you first noticed the shortness of breath?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "moderate",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "Asthma",
+      "COVID-19",
+      "Hypertension",
+      "Myocardial infarction"
+    ]
+  },
+  {
+    "question": "I feel dizzy and lightheaded when I stand up. Why might that happen?",
+    "answer": "I understand you're feeling dizzy and lightheaded when you stand up. That's not a pleasant feeling!\n\nBased on what you've told me, it could be a few things. One possibility is orthostatic hypotension, which is when your blood pressure drops suddenly when you stand up. This can cause dizziness and lightheadedness. Other possibilities include dehydration, low blood sugar, or even a more serious condition like a heart problem.\n\nGiven that it's just dizziness and lightheadedness, it's likely not something to worry about too much, but it's still worth checking out.\n\nWould you like to see a doctor to get this checked out?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "COVID-19",
+      "Hypertension",
+      "Migraine",
+      "Myocardial infarction"
+    ]
+  },
+  {
+    "question": "What can I do at home for body aches and tiredness?",
+    "answer": "Okay, I understand you're experiencing body aches and tiredness. It's a common complaint, and often, these symptoms can be managed at home with some simple measures.\n\nBased on what you've described, some possibilities to consider include:\n\n*   **Common cold:** This can cause body aches, fatigue, and a mild headache.\n*   **Flu:** Similar to a cold, but often with more intense body aches and fever.\n*   **Dehydration:** Sometimes, tiredness can be a sign of not drinking enough fluids.\n*   **Stress or lack of sleep:** These can also lead to body aches and fatigue.\n\nSince you're experiencing body aches and tiredness, it's always a good idea to rest, drink plenty of fluids, and consider over-the-counter pain relievers like ibuprofen or acetaminophen.\n\nGiven the symptoms, I would suggest trying some self-care measures like rest, hydration, and over-the-counter pain relievers. If your symptoms persist or worsen, or if you develop a fever, cough, or other concerning symptoms, it's best to consult a doctor.\n\nDo you have any other symptoms I should be aware of?\n\n\n---\n**Disclaimer.** This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified clinician with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your local emergency number immediately.",
+    "severity": "low",
+    "specialty": "internal_medicine",
+    "retrieved": [
+      "Common cold",
+      "Influenza",
+      "Major depression",
+      "Migraine",
+      "Type 2 diabetes mellitus"
+    ]
+  }
+]

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Send, ListChecks } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import ChatThread, { type Turn } from "@/components/ChatThread";
 import ConversationSidebar from "@/components/ConversationSidebar";
 import SocratesIntake from "@/components/SocratesIntake";
+import FallbackSuggestions, { type FallbackEntry } from "@/components/FallbackSuggestions";
 import { getConversation, streamChat, type ChatMeta, type ChatTurn } from "@/lib/chat";
 import { useAuth } from "@/lib/auth";
 
@@ -29,7 +30,44 @@ export default function Chat() {
   const [error, setError] = useState<string | null>(null);
   const [intakeOpen, setIntakeOpen] = useState(false);
   const [loadingConv, setLoadingConv] = useState(false);
+  // The assistant can be down while the rest of the app is fine: Ollama
+  // stopped, the model still pulling, or the request failing outright. In
+  // that state we offer pre-captured answers instead of a dead end.
+  const [degraded, setDegraded] = useState(false);
   const queryClient = useQueryClient();
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/health")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((h) => {
+        if (cancelled || !h) return;
+        const m = h.medgemma ?? {};
+        if (!m.ollama_running || !m.model_ready) setDegraded(true);
+      })
+      .catch(() => {
+        if (!cancelled) setDegraded(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  /** Answer from the frozen bundle: no network, nothing persisted. */
+  function answerOffline(entry: FallbackEntry) {
+    if (streaming) return;
+    setError(null);
+    setTurns((t) => [
+      ...t,
+      { id: crypto.randomUUID(), role: "user", content: entry.question },
+      {
+        id: crypto.randomUUID(),
+        role: "assistant",
+        content: entry.answer,
+        offline: true,
+      },
+    ]);
+  }
 
   async function loadConversation(id: string) {
     if (id === conversationId || streaming) return;
@@ -97,7 +135,10 @@ export default function Chat() {
               prev.map((t) => (t.id === assistantId ? { ...t, content: t.content + text } : t)),
             );
           },
-          onError: (msg) => setError(msg),
+          onError: (msg) => {
+            setError(msg);
+            setDegraded(true);
+          },
           onDone: () => {
             setTurns((prev) =>
               prev.map((t) => (t.id === assistantId ? { ...t, streaming: false } : t)),
@@ -108,6 +149,7 @@ export default function Chat() {
       );
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
+      setDegraded(true);
     } finally {
       setStreaming(false);
       setTurns((prev) =>
@@ -177,6 +219,8 @@ export default function Chat() {
               {error}
             </div>
           )}
+
+          {degraded && <FallbackSuggestions onPick={answerOffline} disabled={streaming} />}
 
           <div className="border-t border-border/60 p-3 space-y-2">
             <div className="flex items-end gap-2">

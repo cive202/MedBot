@@ -9,6 +9,8 @@ export interface Turn {
   content: string;
   meta?: ChatMeta;
   streaming?: boolean;
+  /** Served from the frozen fallback bundle rather than the live model. */
+  offline?: boolean;
 }
 
 export default function ChatThread({ turns }: { turns: Turn[] }) {
@@ -43,6 +45,11 @@ function Bubble({ turn }: { turn: Turn }) {
           (isUser ? "bg-primary/10 border border-primary/40 text-text" : "glass")
         }
       >
+        {!isUser && turn.offline && (
+          <div className="mb-2 text-[11px] uppercase tracking-wider text-amber-700">
+            Saved answer — assistant offline
+          </div>
+        )}
         {!isUser && turn.meta && <MetaBlock meta={turn.meta} />}
         {turn.content}
         {turn.streaming && (
