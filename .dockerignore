@@ -1,0 +1,17 @@
+.git
+.github
+**/node_modules
+frontend/dist
+frontend/.vite
+backend/data
+backend/uploads/*
+!backend/uploads/.gitkeep
+**/__pycache__
+**/*.py[cod]
+.venv
+venv
+*.joblib
+*.log
+.pytest_cache
+.mypy_cache
+.ruff_cache
