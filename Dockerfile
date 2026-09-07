@@ -35,11 +35,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-# Ollama from the official tarball. The install.sh script assumes systemd,
-# which a container does not have.
-RUN curl -fsSL https://ollama.com/download/ollama-linux-amd64.tgz -o /tmp/ollama.tgz \
-    && tar -xzf /tmp/ollama.tgz -C /usr/local \
-    && rm /tmp/ollama.tgz
+# Ollama from the official release archive — not install.sh, which assumes a
+# systemd the container does not have. The asset is .tar.zst (zstd); the older
+# .tgz name 404s on current releases. Pinned so an upstream rename cannot break
+# the build silently — override with --build-arg OLLAMA_VERSION=vX.Y.Z.
+ARG OLLAMA_VERSION=v0.33.3
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends zstd; \
+    curl -fsSL "https://github.com/ollama/ollama/releases/download/${OLLAMA_VERSION}/ollama-linux-amd64.tar.zst" -o /tmp/ollama.tar.zst; \
+    mkdir -p /tmp/ollama-x; \
+    tar --use-compress-program=unzstd -xf /tmp/ollama.tar.zst -C /tmp/ollama-x; \
+    root="$(dirname "$(dirname "$(find /tmp/ollama-x -type f -name ollama -perm -u+x | head -1)")")"; \
+    cp -a "$root/." /usr/local/; \
+    rm -rf /tmp/ollama-x /tmp/ollama.tar.zst; \
+    apt-get purge -y --auto-remove zstd; \
+    rm -rf /var/lib/apt/lists/*; \
+    test -x /usr/local/bin/ollama
 
 WORKDIR /app
 
